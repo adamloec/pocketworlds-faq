@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { API_BASE_URL } from '../config.js';
+import { API_BASE_URL } from './config.js';
 import Header from "./components/Header.jsx";
 import ChatMessage from "./components/ChatMessage.jsx";
 import ChatInput from "./components/ChatInput.jsx";
