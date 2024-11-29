@@ -13,7 +13,7 @@ function App() {
 
   const API_BASE_URL = import.meta.env.DEV ? 
   "http://localhost:8000" : 
-  "https://app.adamsinter.net/api";
+  "http://app.adamsinter.net/api";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
