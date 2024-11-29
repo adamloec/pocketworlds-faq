@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { API_BASE_URL } from '../config.js';
 import Header from "./components/Header.jsx";
 import ChatMessage from "./components/ChatMessage.jsx";
 import ChatInput from "./components/ChatInput.jsx";
@@ -10,10 +11,6 @@ function App() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
-
-  const API_BASE_URL = import.meta.env.DEV ? 
-  "http://localhost:8000" : 
-  "http://app.adamsinter.net/api";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
