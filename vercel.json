@@ -1,14 +1,25 @@
 {
-    "builds": [
-      {
-        "src": "pocketworlds/server",
-        "use": "@vercel/python"
+  "builds": [
+    {
+      "src": "pocketworlds/server/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "pocketworlds/client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "server/main.py"
-      }
-    ]
-  }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "pocketworlds/server/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "pocketworlds/client/dist/$1"
+    }
+  ]
+}
