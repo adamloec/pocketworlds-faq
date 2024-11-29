@@ -1,8 +1,22 @@
 {
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/server/main.py"
+      "src": "server/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/dist/$1"
     }
   ]
 }
