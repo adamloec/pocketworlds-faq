@@ -26,7 +26,7 @@ app.add_middleware(
 chatbot_instance: Optional[ChatBot] = None
 logger: Optional[Logger] = None
 
-@app.post("/initialize")
+@app.post("/api/initialize")
 def initialize_chatbot():
     global chatbot_instance, logger
     chatbot_instance = ChatBot()
@@ -34,7 +34,7 @@ def initialize_chatbot():
     logger = chat_logger.get_logger()
     logger.log_with_context("Chatbot and logger reinitialized.")
 
-@app.post("/chat", response_model=ChatBotResponse)
+@app.post("/api/chat", response_model=ChatBotResponse)
 def chat(request: ChatBotRequest):
     global chatbot_instance
     try:
@@ -66,7 +66,7 @@ def chat(request: ChatBotRequest):
         logger.log_with_context(f"Error: {str(e)}", level='error')
         raise HTTPException(status_code=500, detail=str(e))
     
-@app.post("/feedback/{feedback_type}")
+@app.post("/api/feedback/{feedback_type}")
 async def handle_feedback(feedback_type: str):
     for dir_name in ["logs/liked", "logs/disliked"]:
         os.makedirs(dir_name, exist_ok=True)
