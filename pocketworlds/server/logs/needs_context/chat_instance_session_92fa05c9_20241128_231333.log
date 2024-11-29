@@ -1,0 +1,13 @@
+2024-11-28 23:13:33,714 [session: 92fa05c9] [interaction: 1] - Session started
+2024-11-28 23:13:33,714 [session: 92fa05c9] [interaction: 2] - Chatbot and logger reinitialized.
+2024-11-28 23:13:42,577 [session: 92fa05c9] [interaction: 3] - User: Hey | metadata: {'message_type': 'user_input', 'message_length': 3}
+2024-11-28 23:13:42,661 [session: 92fa05c9] [interaction: 4] - Chatbot: Hi! I'm here to help you with questions about Highrise. What would you like to know? | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': []}
+2024-11-28 23:13:56,106 [session: 92fa05c9] [interaction: 5] - User: Hello | metadata: {'message_type': 'user_input', 'message_length': 5}
+2024-11-28 23:13:56,107 [session: 92fa05c9] [interaction: 6] - Chatbot: Hi! I'm here to help you with questions about Highrise. What would you like to know? | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': []}
+2024-11-28 23:14:08,528 [session: 92fa05c9] [interaction: 7] - User: Howdy | metadata: {'message_type': 'user_input', 'message_length': 5}
+2024-11-28 23:14:09,112 [session: 92fa05c9] [interaction: 8] - Chatbot: I don't have enough information in the FAQ about that. Could you be more specific about what you're looking for? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
+2024-11-28 23:14:09,112 [session: 92fa05c9] [interaction: 9] - Question marked as needing more context
+2024-11-28 23:14:18,554 [session: 92fa05c9] [interaction: 10] - User: Hey | metadata: {'message_type': 'user_input', 'message_length': 3}
+2024-11-28 23:14:18,555 [session: 92fa05c9] [interaction: 11] - Chatbot: Hi! I'm here to help you with questions about Highrise. What would you like to know? | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': []}
+2024-11-28 23:14:32,081 [session: 92fa05c9] [interaction: 12] - User: Howdy | metadata: {'message_type': 'user_input', 'message_length': 5}
+2024-11-28 23:14:32,559 [session: 92fa05c9] [interaction: 13] - Chatbot: I don't have enough information in the FAQ about that. Could you be more specific about what you're looking for? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
