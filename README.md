@@ -1,6 +1,11 @@
 # pocketworlds-takehome
 Pocket Worlds take home assignment for the Software Engineer (AI) position.
 
+# Design Approach
+
+TODO
+- Rag, vector DB, similarity search on embeddings, using webloader and a custom data loader for extracting all of the article URLS from the support page.
+
 # Running Locally
 
 ## Setup
