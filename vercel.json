@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "pocketworlds/server/main.py",
+        "src": "pocketworlds/server",
         "use": "@vercel/python"
       }
     ],
