@@ -11,7 +11,8 @@ from typing import Optional
 # Vector database, document loading, and embedding/chat model
 from langchain_community.document_loaders import WebBaseLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_chroma import Chroma
+from langchain_pinecone import Pinecone
+from pinecone import Pinecone as PineconeClient
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # Retrieval, prompt templates, and chains
@@ -89,39 +90,47 @@ class ChatBot:
             oops = "Sorry, I am having technical issues right now. Could you try asking your question in a different way?"
             return ChatBotResponse(system_response=oops, supporting_urls=[], completed=False)
         
-    def _create_vectorstore(self) -> Chroma:
+    def _create_vectorstore(self) -> Pinecone:
         """
-        Creates a vector database for storing document embeddings.
+        Creates a Pinecone vector database for storing document embeddings.
 
-        :return: A Chroma vector store instance
+        :return: A Pinecone vector store instance
         """
         try:
-            persist_directory = "chroma_database"
-
-            if os.path.exists(persist_directory):
-                vector_store = Chroma(
-                    persist_directory=persist_directory,
-                    embedding_function=self.embeddings
+            pc = PineconeClient(api_key=os.getenv("PINECONE_API_KEY"))
+            
+            index_name = "highrise-faq"
+            
+            if index_name not in pc.list_indexes().names():
+                pc.create_index(
+                    name=index_name,
+                    dimension=1536,
+                    metric="cosine"
                 )
-
-            else:
+                
                 data_pipeline = DataPipeline()
                 urls = data_pipeline.get_urls()
-
+                
                 loader = WebBaseLoader(urls)
                 documents = loader.load()
                 splits = self.text_splitter.split_documents(documents)
                 
-                vector_store = Chroma.from_documents(
+                vector_store = Pinecone.from_documents(
                     documents=splits,
                     embedding=self.embeddings,
-                    persist_directory=persist_directory
+                    index_name=index_name
                 )
-
+            else:
+                vector_store = Pinecone.from_existing_index(
+                    index_name=index_name,
+                    embedding=self.embeddings
+                )
+                
             return vector_store
-        
+            
         except Exception as e:
             print(f"Failed to create vector store: {str(e)}")
+            raise
         
     def _create_conversation_chain(self):
         """
