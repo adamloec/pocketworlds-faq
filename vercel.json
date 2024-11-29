@@ -24,5 +24,6 @@
       "src": "/(.*)",
       "dest": "pocketworlds/client/dist/$1"
     }
-  ]
+  ],
+  "framework": "vite"
 }
