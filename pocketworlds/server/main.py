@@ -17,8 +17,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173",
-                   "https://pocketworlds-ah72e4vue-adamloeckle-gmailcoms-projects.vercel.app"],
+    allow_origins=["http://localhost:5173", "*"],  # Add * for production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
