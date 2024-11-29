@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from fuzzywuzzy import fuzz
 import random
 
-nltk.download('punkt_tab', download_dir=".")
+nltk.download('punkt_tab')
 
 def check_greeting_farewell(user_message: str) -> Tuple[Optional[str], bool]:
     """
