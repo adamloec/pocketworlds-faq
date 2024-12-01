@@ -1,0 +1,28 @@
+2024-11-30 23:27:16,604 [session: 348cb998] [interaction: 1] - Session started
+2024-11-30 23:27:16,604 [session: 348cb998] [interaction: 2] - Chatbot and logger reinitialized.
+2024-11-30 23:27:22,017 [session: 348cb998] [interaction: 3] - User: Hey | metadata: {'message_type': 'user_input', 'message_length': 3}
+2024-11-30 23:27:22,017 [session: 348cb998] [interaction: 4] - Chatbot: Hi! I'm here to help you with questions about Highrise. What would you like to know? | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': []}
+2024-11-30 23:27:26,072 [session: 348cb998] [interaction: 5] - User: How can I earn gold? | metadata: {'message_type': 'user_input', 'message_length': 20}
+2024-11-30 23:27:28,566 [session: 348cb998] [interaction: 6] - Chatbot: There are several ways to earn gold in the Highrise app:
+
+1. Purchase gold from the Highrise shop by selecting 'cash'.
+2. Become a World Builder and create worlds and experiences for other users to enjoy.
+3. Explore sponsor offers in the shop to earn free gold.
+4. Watch videos for extra gold and rare items.
+5. Participate in player-created games like pageants and block games as a Game Guru.
+6. Receive tips from other players as a Friendship Fortune.
+7. If you're part of a crew, your mates' gold purchases might result in gifts for you, known as Crewmate's Coin.
+
+So, start your gold quest now and make Scrooge McDuck jealous! | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': ['https://support.highrise.game/en/articles/8043139-what-is-gold-and-how-do-i-get-it', 'https://support.highrise.game/en/articles/8043170-why-didn-t-i-get-my-gold-from-a-sponsor-s-offer']}
+2024-11-30 23:27:49,106 [session: 348cb998] [interaction: 7] - User: How can I create a new room? | metadata: {'message_type': 'user_input', 'message_length': 28}
+2024-11-30 23:27:50,979 [session: 348cb998] [interaction: 8] - Chatbot: To create a new room in Highrise, you can follow these steps:
+
+1. Tap on the 'Room' icon located at the bottom left-hand corner of your screen.
+2. Once inside a room, tap the 'Travel' icon at the top left-hand corner of your screen, then select 'My Rooms'.
+3. Look for the '+' icon that appears and tap on it to start creating your new room.
+4. Choose your room's size and style, add a description, and customize it to your liking.
+5. After setting the ambiance, hit 'Create' to finalize your new room creation.
+
+Now you're ready to start decorating and making your room your own unique space in Highrise! | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': ['https://support.highrise.game/en/articles/8043396-who-can-enter-my-room-how-can-i-change-my-room-s-privacy-settings', 'https://support.highrise.game/en/articles/8043413-what-are-crew-rooms', 'https://support.highrise.game/en/articles/8043381-how-do-i-create-a-new-room']}
+2024-11-30 23:28:17,694 [session: 348cb998] [interaction: 9] - User: What is the UDC? | metadata: {'message_type': 'user_input', 'message_length': 16}
+2024-11-30 23:28:19,088 [session: 348cb998] [interaction: 10] - Chatbot: The User Design Contest (UDC) feature in Highrise allows players to submit their own item designs for various art competitions. Winning designs will be turned into real items by the art team. | metadata: {'message_type': 'system_response', 'completed': True, 'supporting_urls': ['https://support.highrise.game/en/articles/8380186-user-design-contest-feature-udc']}

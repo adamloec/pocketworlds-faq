@@ -1,0 +1,14 @@
+2024-11-30 23:29:16,773 [session: 78c9e659] [interaction: 1] - Session started
+2024-11-30 23:29:16,774 [session: 78c9e659] [interaction: 2] - Chatbot and logger reinitialized.
+2024-11-30 23:29:21,785 [session: 78c9e659] [interaction: 3] - User: Who is Abraham Lincoln? | metadata: {'message_type': 'user_input', 'message_length': 23}
+2024-11-30 23:29:21,961 [session: 78c9e659] [interaction: 4] - Chatbot: I want to help, but I need more details. What specific feature are you asking about? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
+2024-11-30 23:29:21,961 [session: 78c9e659] [interaction: 5] - Question marked as needing more context
+2024-11-30 23:29:31,607 [session: 78c9e659] [interaction: 6] - User: You don't know who Abraham Lincoln is? | metadata: {'message_type': 'user_input', 'message_length': 38}
+2024-11-30 23:29:31,845 [session: 78c9e659] [interaction: 7] - Chatbot: I don't have enough information in the FAQ about that. Could you be more specific about what you're looking for? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
+2024-11-30 23:29:31,845 [session: 78c9e659] [interaction: 8] - Question marked as needing more context
+2024-11-30 23:29:36,874 [session: 78c9e659] [interaction: 9] - User: :( | metadata: {'message_type': 'user_input', 'message_length': 2}
+2024-11-30 23:29:37,135 [session: 78c9e659] [interaction: 10] - Chatbot: I want to help, but I need more details. What specific feature are you asking about? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
+2024-11-30 23:29:37,136 [session: 78c9e659] [interaction: 11] - Question marked as needing more context
+2024-11-30 23:29:58,880 [session: 78c9e659] [interaction: 12] - User: Abraham Lincoln gold highrise pinning | metadata: {'message_type': 'user_input', 'message_length': 37}
+2024-11-30 23:29:59,277 [session: 78c9e659] [interaction: 13] - Chatbot: I don't have enough information in the FAQ about that. Could you be more specific about what you're looking for? | metadata: {'message_type': 'system_response', 'completed': False, 'supporting_urls': []}
+2024-11-30 23:29:59,277 [session: 78c9e659] [interaction: 14] - Question marked as needing more context
