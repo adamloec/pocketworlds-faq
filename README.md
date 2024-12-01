@@ -51,7 +51,7 @@ The chatbot implements a Retrieval-Augmented Generation (RAG) pipeline with the 
 2. Chat utilities code that contains functions for handling greeting and farewell messages, checking for relevant context, getting supporting URLs, and creating default clarification messages.
 
 ## API and Logging
-[View API Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/main.py)
+[View API Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/main.py)
 
 1. The API has 3 endpoints:
 
