@@ -10,7 +10,7 @@ A conversational AI chatbot designed to assist users with Highrise-related quest
 
 **Additional (Optional) Features**
 - *Basic NLP techniques:* Using the NLTK library, and with RAG by default.
-- *Learning Mode:* I did not implememt this, but using the user feedback logs you could create a feedback loop that trains the model on live data. This could improve the relevance of generated responses and possibly be used to train the embedding model for more accurate context retrieval.
+- *Learning Mode:* I did not implement this, but using the user feedback logs you could create a feedback loop that trains the model on live data. This could improve the relevance of generated responses and possibly be used to train the embedding model for more accurate context retrieval.
 - *User Feedback:* This is setup by a "like and dislike" button after each chat bot response. Sorted on the backend server in the logs directory.
 - *Open Source Model Hosting:* Not implemented because I don't have enough compute on my server but I have instructions below in the README.md on how I would do it. It is as simple as downloading a model and changing ~5 lines of code.
 
