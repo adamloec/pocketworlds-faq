@@ -35,16 +35,67 @@ The chatbot implements a Retrieval-Augmented Generation (RAG) pipeline with the 
 # Key Modules
 
 ## Data Pipeline
+[View Data Pipeline Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/data_pipeline.py)
+
+- Accesses the support home page, and iterates through each collection to extract and return all article URLs.
 
 
 ## Chat Bot
-[View chat_bot.py](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/chat_bot.py)
+[View Chat Bot Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/chat_bot.py)
+[View Chat NLP Utilities Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/chat_utilities.py)
 
-- Chat Bot object that handles the chat bot processes:
-1. Initialization extracts FAQ URLS and creates the vector database of each URL's web page content.
-2. 
+1. Chat Bot object that handles the chat bot processes:
+- Initialization creates the chat conversation chain (Prompts, LLM, retriever) and the vector database of URL and article embeddings (Chroma DB).
+-  Process message runs inference on the conversation chain and returns a response. This function handles logic for checking if it is a greeting or farewell message, if the message can retrieve context, and if not, return a "need more context" response, and grabs supporting URLs to return to the user for more information.
 
-# Running Locally
+2. Chat utilities code that contains functions for handling greeting and farewell messages, checking for relevant context, getting supporting URLs, and creating default clarification messages.
+
+## API and Logging
+[View API Code](https://github.com/adamloec/pocketworlds-faq/blob/main/pocketworlds/server/chat/main.py)
+
+1. The API has 3 endpoints:
+
+- /api/initialize: This endpoint creates the chatbot and logger object for that specific session.
+- /api/chat: This endpoint is responsible for running the chatbot and processing a user's message. Each message is logged to that sessions log file.
+    - If the chat bot returns false for completing a request, it needs more context. This log file gets copied into the /logs/needs_context
+    dirctory.
+- /api/feedback/{feedback_type}: This endpoint recieves a disliked or liked feedback type, and copies the log file for that session into either the /logs/disliked or logs/liked directory.
+
+## Frontend
+
+If you are interested in viewing the front end code, this can be found under the pocketworlds/client directory.
+
+# Local Model Alternative
+
+The current implementation uses OpenAI's models, but the architecture is designed for easy switching to local open-source models:
+
+1. Model Replacement:
+
+```python
+# Current OpenAI implementation
+from langchain.llms import OpenAI
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
+
+# Local model alternative, using mistral
+from langchain.llms import HuggingFacePipeline
+llm = HuggingFacePipeline.from_model_id(
+    model_id="mistralai/Mistral-7B-Instruct-v0.2",
+    task="text-generation",
+    device="cuda"
+)
+```
+
+2. Embedding Model Replacement:
+
+```python
+# Replace OpenAI embeddings
+from langchain.embeddings import HuggingFaceEmbeddings
+embeddings = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-large-en-v1.5"
+)
+``` 
+
+# Running
 
 ## Setup
 
