@@ -3,6 +3,10 @@ Pocket Worlds take home assignment for the Software Engineer (AI) position.
 
 A conversational AI chatbot designed to assist users with Highrise-related questions. Built with FastAPI, React, and leveraging OpenAI models (read below for open-source, local model usage), deployed on a self-hosted Debian server with nginx.
 
+**Next Steps**
+- Add chat memory for asking follow up questions about chat bot responses.
+- Feedback learning loop for training the generation model and embedding model for more accurate retrieval (Probably using Open-source models at this point)
+
 **Notes and Basic Details**
 - This uses RAG, or Retrieval Augmented Generation, to retrieve relevant information based on the user input.
 - If a user input does not meet a certain similarity search threshold (when running retrieval on the vector database, currently set at 70%), this will return a default response asking for more information.
