@@ -1,5 +1,9 @@
 # Project specific ignores
 chroma_database/
+nltk_data/
+tokenizers/
+frontend-build/
+deploy.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
