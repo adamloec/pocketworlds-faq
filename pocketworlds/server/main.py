@@ -29,10 +29,14 @@ logger: Optional[Logger] = None
 @app.post("/api/initialize")
 def initialize_chatbot():
     global chatbot_instance, logger
-    chatbot_instance = ChatBot()
-    chat_logger = Logger(name="chat_instance")
-    logger = chat_logger.get_logger()
-    logger.log_with_context("Chatbot and logger reinitialized.")
+    try:
+        chatbot_instance = ChatBot()
+        chat_logger = Logger(name="chat_instance")
+        logger = chat_logger.get_logger()
+        logger.log_with_context("Chatbot and logger reinitialized.")
+    except Exception as e:
+        logger.log_with_context(f"Error: {str(e)}", level='error')
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/chat", response_model=ChatBotResponse)
 def chat(request: ChatBotRequest):
