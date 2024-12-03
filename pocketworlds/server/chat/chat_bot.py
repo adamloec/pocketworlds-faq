@@ -96,7 +96,7 @@ class ChatBot:
         :return: A Chroma vector store instance
         """
         try:
-            persist_directory = "chroma_database"
+            persist_directory = "chat/chroma_database"
 
             if os.path.exists(persist_directory):
                 vector_store = Chroma(
