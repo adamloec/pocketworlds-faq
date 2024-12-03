@@ -4,13 +4,17 @@ Date: 11/26/2024
 
 """
 
+import os
 from typing import Tuple, Optional
 import nltk
 from nltk.tokenize import word_tokenize
 from fuzzywuzzy import fuzz
 import random
 
-nltk.download('punkt_tab', download_dir="/var/www/pocketworlds-faq/pocketworlds/server/chat/")
+nltk_dir = '/var/www/pocketworlds-faq/pocketworlds/server/chat/nltk_data/'
+os.environ['NLTK_DATA'] = nltk_dir
+nltk.data.path.append(nltk_dir)
+nltk.download('punkt_tab', download_dir=nltk_dir)
 
 def check_greeting_farewell(user_message: str) -> Tuple[Optional[str], bool]:
     """
