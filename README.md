@@ -36,7 +36,7 @@ The chatbot implements a Retrieval-Augmented Generation (RAG) pipeline with the 
 - Vector similarity search finds relevant documentation.
 - Context is injected into the prompt for accurate responses.
 
-4. Last Message Context
+4. Chat Memory
 - Created a last exchange that gets updated for every new message. 
 - This previous message pair gets injected into the context, incase a user has specific questions about a response from the system.
 
